@@ -62,17 +62,31 @@
                   name="search_term"
                   placeholder="Find a venue"
                   aria-label="Search">
+                  <span>Search by: </span>
+                  <input type="radio" id="search_by_name" name="search_by" value="name" checked>
+                  <label for="search_by_name" style="margin:5px;">Name</label>
+                  <input type="radio" id="search_by_city" name="search_by" value="city">
+                  <label for="search_by_name" style="margin:5px;">City</label>
+                  <input type="radio" id="search_by_city" name="search_by" value="state">
+                  <label for="search_by_name" style="margin:5px;">State</label>
               </form>
               {% endif %}
               {% if (request.endpoint == 'artists') or
-                (request.endpoint == 'search_artists') or
-                (request.endpoint == 'show_artist') %}
+                (request.endpoint == 'search_artists') %}
+                <!-- or (request.endpoint == 'show_artist') %} -->
               <form class="search" method="post" action="/artists/search">
                 <input class="form-control"
                   type="search"
                   name="search_term"
                   placeholder="Find an artist"
                   aria-label="Search">
+                  <span>Search by: </span>
+                  <input type="radio" id="search_by_name" name="search_by" value="name" checked>
+                  <label for="search_by_name" style="margin:5px;">Name</label>
+                  <input type="radio" id="search_by_city" name="search_by" value="city">
+                  <label for="search_by_name" style="margin:5px;">City</label>
+                  <input type="radio" id="search_by_city" name="search_by" value="state">
+                  <label for="search_by_name" style="margin:5px;">State</label>
               </form>
               {% endif %}
             </li>
